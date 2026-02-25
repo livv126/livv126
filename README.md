@@ -59,11 +59,11 @@
 > **기간:** 2026.02.12 ~ 2026.02.21 (1.5주)  
 > **역할:** 클라우드 인프라 배포, JVM 튜닝 및 애플리케이션 형상 관리 100% 자동화
 
-* **인프라 자동화 및 DNS 제어:** Terraform을 활용하여 GCP 커스텀 VPC, 방화벽 규칙, 고성능 Compute Engine 배포를 자동화하고, Cloudflare 프록시 우회(UDP 통신 보장) 설정을 코드로 제어함.
-* **WireGuard 기반 오버레이 네트워크 구성:** Tailscale을 도입하여 GCP 워크로드와 온프레미스(ELK) 간 복잡한 라우팅을 최소화하고, 종단 간(End-to-End) 암호화 통신을 구현함.
+* **인프라 자동화 및 DNS 제어:** Terraform을 활용하여 GCP 커스텀 VPC, 방화벽 규칙, 고성능 Compute Engine 배포를 자동화하고, Cloudflare 프록시 우회(UDP 통신 보장) 설정을 코드로 제어
+* **WireGuard 기반 오버레이 네트워크 구성:** Tailscale을 도입하여 GCP 워크로드와 온프레미스(ELK) 간 복잡한 라우팅을 최소화하고, 종단 간(End-to-End) 암호화 통신을 구현
 * **동적 변수 참조 (Cross-Host Facts):** Ansible 프로비저닝 단계에서 모니터링 노드의 VPN IP(`tailscale0`)를 실시간으로 수집(`gather_facts`)하여 타겟 노드에 주입하는 방식으로 하드코딩을 배제함.
 * **애플리케이션 최적화 (Tuning):** 다중 접속 환경의 부하를 견디기 위해 Ansible로 JVM 메모리(Xms, Xmx 24g)를 자동 튜닝하고, 네트워크 최적화 클래스 파일(`NetworkZombiePacker.class`)을 패치함.
-* **대규모 환경 변수 및 시크릿 관리:** 60여 개의 확장 모드 및 샌드박스 설정을 Jinja2 템플릿으로 구조화하여 배포하고, VPN 인증 키 및 데이터베이스 암호는 Ansible Vault로 암호화하여 보안성을 확보함.
+* **대규모 환경 변수 및 시크릿 관리:** 60여 개의 확장 모드 및 샌드박스 설정을 Jinja2 템플릿으로 구조화하여 배포하고, VPN 인증 키 및 데이터베이스 암호는 Ansible Vault로 암호화하여 보안성을 확보
 
 ---
 
